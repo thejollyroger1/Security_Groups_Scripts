@@ -36,7 +36,8 @@ def find_port_api(region, token):
     for port_uuid in port_parse:
         if network_uuid in port_uuid['network_id']:
             port_uuid_list.append(port_uuid['id'])
-            
+
+#Find all ports associated with defined security group and update them            
 def list_and_refresh_by_securitygroup(region, token):
     for port_uuid in port_uuid_list:
         port_url = "https://%s.networks.api.rackspacecloud.com/v2.0/ports/%s" % (region, port_uuid)
